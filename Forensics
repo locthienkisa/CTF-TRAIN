@@ -1,0 +1,99 @@
+     Forensics 
+
+**Tổng quan về forensics  
+
+Trong lĩnh vực an toàn thông tin, Computer Forensics hay còn gọi là điều tra số là công việc phát hiện, bảo vệ và phân tích thông tin được lưu trữ, truyền tải hoặc được tạo ra bởi một máy tính hoặc mạng máy tính, nhằm đưa ra các suy luận hợp lý để tìm nguyên nhân, giải thích các hiện tượng trong quá trình điều tra. Computer Forensics ra đời vào những năm 1980 do sự phát triển của máy tính cá nhân, khi xảy ra trộm cắp thiết bị phần cứng, mất mát dữ liệu, vi phạm bản quyền, virus máy tính phá hoại... Các doanh nghiệp và chính phủ các nước khi đó cũng ý thức hơn về vấn đề bảo mật. Từ đây và trong các loạt bài về sau, khi tôi dùng từ Forensics thì mọi người hiểu là đang nói về Computer Forensics. Mục tiêu cốt lõi của Computer Forensic là phát hiện, bảo quản, khai thác, tài liệu hóa và đưa ra kết luận về dữ liệu thu thập được. Cần lưu ý rằng dữ liệu phải đảm bảo tính xác thực và được lấy mà không bị hư hại, nếu không dữ liệu đấy sẽ không còn ý nghĩa. 
+
+**Đặc điểm của Computer Forensics: 
+
+-Dữ liệu cần phải phân tích lớn, nếu dữ liệu chỉ là text thì với dung lượng vài mb chúng ta cũng đã có một ượng thông tin rất lớn. 
+
+-Dữ liệu thường sẽ không còn nguyên vẹn, vị phân mảnh, bị lỗi hoặc có thể bị thay đổi. 
+
+-Việc bảo quản dữ liệu khó khăn. 
+
+-Những dữ liệu thu được có tính toàn vẹn cao nên chỉ cần một thay đổi nhỏ có thể làm ảnh hưởng đến tất cả. 
+
+-Dữ liệu forensic có thể gồm nhiều loại khác nhau: file hệ thống, ứng dụng… 
+
+-Dữ liệu Forensics khá trừu tượng: dump file, mã máy, network packet... 
+
+-Dữ liệu dễ dàng bị giả mạo. 
+
+**Ứng dụng của computer forensics: 
+
+Sự bành trướng của ngành công nghệ thông tin, sự soán ngôi của Big data, nhu cầu về bảo mật thông tin lẫn tình hình phức tạp của tội phạm công nghệ cao...đã đưa nhu cầu về bảo mật thông tin lên hàng đầu của nhiều doanh nghiệp, quốc gia, thậm chí nó tác động mạnh đến sự tồn vong của một tổ chức vì hầu hết các thông tin mật, quan trọng của cơ quan đều được hợp thực dưới dạng số. Để dễ hình dung,  bạn có thể lấy ví dụ như thế nào.  
+
+Những doanh nghiệp có thể mất đến hàng triệu đô nếu trong vài phút nếu như mạng Internet bị sập, nhưng tình trạng website của doanh nghiệp đó, vĩnh viễn bị đánh cắp không rõ nguyên nhân bởi những tội phạm về kinh tế trực tuyến..và trả lại doanh nghiệp một website trống, không có giá trị sử dụng thì tổng thiệt hại của nó còn không thể được quy ra bằng tiền mà bằng sự mất trắng bằng uy tín, thương hiệu. 
+
+Đó lý do vì sao, tất cả các doanh nghiệp, đặc biệt đang kinh doanh trên nền tảng công nghệ thông tin đều có một đội ngũ kỹ thuật đi kèm. Những Coder này không chỉ có nhiệm vụ thiết kế giao diện, sửa lỗi phần mềm mà còn có chức năng phát hiện và xử lý các tác nhân gây hại cho website, khôi phục những dữ liệu bị mất và thiết lập hàng rào lửa để đảm bảo “an nguy” cho tình hình kinh doanh của doanh nghiệp.   
+
+ 
+**Những đối tượng của forensics 
+
+*Memory Forensics: Là phương thức điều tra máy tính bằng việc ghi lại bộ nhớ khả biến (bộ nhớ RAM) của hệ thống sau đó tiến hành phân tích làm rõ các hành vi đã xảy ra trên hệ thống. Cụ thể hơn, đó là cố gắng sửdụng kiến trúc quản lý bộ nhớ trong máy tính để ánh xạ, trích xuất các tập tin đang thực thi và cư trú trong bộ nhớ
+
+- Hiện tại để dump dữ liệu từ RAM trên Windows, ta có thể sử dụng những công cụ như DumpIt…
+- Để phân tích file dump, thời kì đầu các chuyên gia về Memory Forensics thường sử dụng những strings và grep, đây là những công cụ tìm kiếm dữ liệu trong file theo khuôn mẫu chứ không được phát triển cho Forensics.
+- Về sau, xuất hiện những công cụ được phát triển dành riêng cho Memory Forensics như Volatility, MoonSols…
+
+*Network Forensics:Là một nhánh của digital forensics liên quan đến việc theo dõi, giám sát, phân tích lưu lượng mạng máy tính nhằm phục vụ cho việc thu thập thông tin, sự kiện liên quan, tìm kiếm chứng cứ pháp lý, mục đích là phát hiện sự bất thường, các dấu hiệu xâm nhập trên môi trường mạng
+
+
+- Wireshark, Network Miner bắt và phân tích gói tin với giao diện đồ họa
+- Tcpdump phân tích gói tin với giao diện console
+- p0f dùng để phát hiện hệ điều hành, console trên nền Linux
+- netcat, debug kết nối, đóng vai trò cả client và server, console trên windows và linux
+- Snort, opensource phát hiện xâm nhập
+- Nmap, tcpxtract, ssldump, nslookup, maxmind... và rất nhiều công cụ khác
+
+*Steganography:
+
+
+- Theo wikipedia, Steganography là nghệ thuật và khoa học về việc giấu thông điệp, hình ảnh, hoặc dữ liệu trong một thông điệp khác, hỉnh ảnh khác hoặc dữ liệu khác. Thông thường, thông điệp ẩn sẽ được ẩn dấu trong một ảnh, một bài viết, một đoạn văn bản, hay thậm chí là một danh sách mua sắm.
+
+- Ví dụ cụ thể: thông điệp ẩn có thể được viết bằng mực vô hình (invisible ink), nằm giữa các dòng chữ nhìn thấy được bởi mắt thường của một bức thư.
+- Các loại thường gặp:
+
++Văn bản Steganography: Trong văn bản, việc ẩn thông điệp có thể được thực hiện bằng cách sử dụng các kỹ thuật như việc thay đổi kích thước các khoảng trắng, hoặc việc ẩn thông điệp trong văn bản không dấu.
++Âm thanh Steganography: Trong tệp âm thanh, thông tin có thể được ẩn bằng cách sửa đổi các dải tần số không nghe được hoặc thêm dữ liệu +vào các khu vực không ảnh hưởng đến chất lượng nghe được của âm thanh.
++Video Steganography: Trong video, thông tin ẩn có thể được lưu trữ trong các khung hình không quan trọng hoặc được thêm vào các phần không gây ảnh hưởng đến chất lượng video chính.
++Ảnh Steganography: Trong một bức hình ảnh, các bit của thông tin bí mật được lưu trữ trong các bit ít quan trọng của pixel. Ví dụ, việc thay đổi giá trị RGB nhỏ nhất của mỗi pixel có thể tạo ra một ảnh không thay đổi đáng kể về hình ảnh nhưng vẫn chứa thông tin ẩn.
+- Một số tool, lệnh:
+
++binwalk: Binwalk là một công cụ mạnh mẽ được sử dụng trong lĩnh vực phân tích tập tin nhị phân. Nó được thiết kế để phân tích và trích xuất thông tin từ các tập tin nhị phân, đặc biệt là các tệp firmware, hình ảnh, tập tin nén và các loại tệp tin khác. Thường mình dùng Binwalk -e trích xuất thông tin như 1 bức ảnh khác, file txt hay file zip (nếu có)
+
++ExifTool: ExifTool là một công cụ mạnh mẽ được sử dụng để đọc, viết và chỉnh sửa thông tin metadata của các tập tin đa phương tiện như hình ảnh, video và các tập tin âm thanh. Metadata là các dữ liệu mô tả về thông tin của tập tin, bao gồm thông tin về camera sử dụng để chụp ảnh, thời gian chụp, địa điểm, thông tin về tác giả, và nhiều thông tin khác. Nếu bạn muốn tạo 1 thử thách cho bạn bè có thể tìm hiểu thêm về exiftool và chỉnh sửa một số trường thông tin trên ảnh hay 1 file nào đó. Tất nhiên không chỉ ẩn flag mà các tác giả có thể để lại tên author hay vị trí chụp ảnh (GPS) hoặc bất kỳ điều gì đó chúng ta cần lưu ý để tìm kiếm thêm các thông tin liên quan (Metadata).
+
++ Strings **** | grep ***​(linux):Có thể nói đây là câu lệnh kinh điển nhất mà một CTFer nào cũng phải biết, không chỉ đọc các thông tin từ ảnh mà còn dùng được cả ở trong mấy bài dễ ở các chủ đề khác nữa RE là 1 ví dụ. Cũng đơn giản thôi tùy từng chủ đề mà các bạn có thể chọn các regex khác nhau: base64, base32,... hay đơn giản là flag hoặc tên viết tắt của Event.
+
++Steghide:Steghide là một công cụ dùng để ẩn thông tin (như văn bản, hình ảnh, âm thanh) trong một tệp tin hình ảnh. Cụ thể, Steghide sử dụng kỹ thuật steganography, một phương pháp để giấu thông tin bằng cách nhúng nó vào trong dữ liệu không gian, thường là hình ảnh hoặc âm thanh, mà không làm thay đổi đáng kể về ngoại hình của tệp tin đó.
+
+
+*File Forensics (File Formats):
+
+-đây là dạng phân tích file xem nó bị lỗi hay cần crack,...
+-một số tool:
++crack file:Fcrackzip,JohntheRipper,passper for zip,...
++Sai header:HxD,PNGcheck,bless,...
++kiểm tra file:binwalk,...
+
+*Disk Forensics: Là việc thu thập, phân tích dữ liệu được lưu trữ trênphương tiện lưu trữ vật lý, nhằm trích xuất dữ liệu ẩn, khôi phục các tậptin bị xóa, qua đó xác định người đã tạo ra những thay đổi dữ liệu trênthiết bị được phân tích.
+-một số tool:FTK,Sleuthkit,encase,...
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+   
+
+ 
